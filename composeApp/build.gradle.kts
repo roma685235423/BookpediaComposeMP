@@ -42,6 +42,7 @@ kotlin {
         
         androidMain.dependencies {
             implementation(compose.preview)
+            implementation ("androidx.compose.ui:ui-tooling-preview:1.4.0")
             implementation(libs.androidx.activity.compose)
 
             implementation(libs.koin.android)

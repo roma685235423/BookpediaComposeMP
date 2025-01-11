@@ -15,6 +15,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import cmp_bookpedia.composeapp.generated.resources.Res
 import cmp_bookpedia.composeapp.generated.resources.compose_multiplatform
+import com.plcoding.bookpedia.book.presentation.book_list.components.BookSearchBar
 
 @Composable
 @Preview
@@ -30,6 +31,13 @@ fun App() {
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
                     Text("Compose: $greeting")
+                    BookSearchBar(
+                        searchQuery = "Kotlin",
+                        onSearchQueryChange = {},
+                        onImeSearch = {},
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    )
                 }
             }
         }
