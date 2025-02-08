@@ -1,6 +1,6 @@
+// Корневой build.gradle.kts
+
 plugins {
-    // this is necessary to avoid the plugins to be loaded multiple times
-    // in each subproject's classloader
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.androidLibrary) apply false
     alias(libs.plugins.compose.compiler) apply false
@@ -8,4 +8,13 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.room) apply false
+    id("org.jetbrains.kotlin.kapt") version "1.9.0" apply false  // Добавляем плагин котлин-капт
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    }
 }

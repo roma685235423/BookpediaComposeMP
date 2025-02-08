@@ -33,10 +33,6 @@ kotlin {
     
     jvm("desktop")
 
-    room {
-        schemaDirectory("$projectDir/schemas")
-    }
-
     sourceSets {
         val desktopMain by getting
         
@@ -52,7 +48,7 @@ kotlin {
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
@@ -115,6 +111,10 @@ android {
 
     buildFeatures {
         compose = true
+    }
+
+    room {
+        schemaDirectory("$projectDir/schemas")
     }
 }
 
